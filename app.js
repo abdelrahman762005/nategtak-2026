@@ -180,14 +180,14 @@
 
     try {
       if (mode === "seat") {
-        const rows = await fetchData(`/data/seat/${query.slice(0, 3)}.json`);
+        const rows = await fetchData(`data/seat/${query.slice(0, 3)}.json`);
         const row = rows.find((item) => item[0] === Number(query));
         currentResults = row
           ? [{ seatingNo: row[0], arabicName: row[1], totalDegree: row[2], studentCaseDesc: statusLabels[row[3]] }]
           : [];
       } else {
         const normalized = normalizeArabic(query);
-        const rows = await fetchData(`/data/name/${nameBucket(normalized)}.json`);
+        const rows = await fetchData(`data/name/${nameBucket(normalized)}.json`);
         currentResults = rows
           .filter((item) => item[0].startsWith(normalized))
           .slice(0, 20)
