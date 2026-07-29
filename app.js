@@ -10,21 +10,40 @@
   const queryInput = document.getElementById("result-query");
   const resultsSection = document.getElementById("results-section");
   const searchButton = document.getElementById("search-button");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const compactViewport = window.matchMedia("(max-width: 620px)").matches;
+  const introDuration = reducedMotion ? 2800 : compactViewport ? 5200 : 4300;
+  let introTimer = 0;
+
+  document.body.classList.add("intro-active");
 
   const finishIntro = () => {
     if (!intro || intro.classList.contains("intro--leaving")) return;
+    window.clearTimeout(introTimer);
     intro.classList.add("intro--leaving");
+    intro.setAttribute("aria-hidden", "true");
     window.setTimeout(() => {
       intro.remove();
-      queryInput.focus();
-    }, 720);
+      document.body.classList.remove("intro-active");
+      if (!compactViewport) queryInput.focus({ preventScroll: true });
+    }, reducedMotion ? 40 : 720);
   };
 
-  document.getElementById("skip-intro").addEventListener("click", finishIntro);
-  window.setTimeout(
-    finishIntro,
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 650 : 4300,
-  );
+  const startIntro = () => {
+    if (!intro || intro.classList.contains("intro--leaving") || document.hidden) return;
+    window.clearTimeout(introTimer);
+    intro.classList.add("intro--ready");
+    introTimer = window.setTimeout(finishIntro, introDuration);
+  };
+
+  document.getElementById("skip-intro")?.addEventListener("click", finishIntro);
+  window.requestAnimationFrame(() => window.requestAnimationFrame(startIntro));
+  document.addEventListener("visibilitychange", () => {
+    window.clearTimeout(introTimer);
+    if (!document.hidden) {
+      window.requestAnimationFrame(() => window.requestAnimationFrame(startIntro));
+    }
+  });
 
   const normalizeArabic = (value) =>
     value
