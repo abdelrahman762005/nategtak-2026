@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#061a2b" />
+    <meta name="description" content="ابحث عن نتيجة الثانوية العامة 2026 بالاسم أو رقم الجلوس في لحظات." />
+    <meta property="og:title" content="نتيجتك — لحظة تعبك تستاهل فرحة" />
+    <meta property="og:description" content="نتيجة الثانوية العامة 2026 بالاسم أو رقم الجلوس." />
+    <meta property="og:image" content="/og.png" />
+    <title>نتيجتك | نتيجة الثانوية العامة 2026</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="site-shell">
+      <section class="intro" id="intro" aria-label="افتتاحية موقع نتيجتك">
+        <div class="intro__aurora intro__aurora--one"></div>
+        <div class="intro__aurora intro__aurora--two"></div>
+        <div class="intro__beam"></div>
+        <div class="intro__grain"></div>
+        <div class="intro__particles" aria-hidden="true">
+          <i style="--x:8%;--size:3px;--delay:-1s;--duration:4s"></i><i style="--x:17%;--size:4px;--delay:-2s;--duration:5s"></i>
+          <i style="--x:29%;--size:2px;--delay:-.4s;--duration:4.4s"></i><i style="--x:39%;--size:5px;--delay:-3s;--duration:5.2s"></i>
+          <i style="--x:48%;--size:3px;--delay:-1.7s;--duration:3.8s"></i><i style="--x:58%;--size:2px;--delay:-2.6s;--duration:4.6s"></i>
+          <i style="--x:67%;--size:4px;--delay:-.8s;--duration:5.4s"></i><i style="--x:76%;--size:3px;--delay:-3.4s;--duration:4.1s"></i>
+          <i style="--x:86%;--size:5px;--delay:-1.3s;--duration:5s"></i><i style="--x:94%;--size:2px;--delay:-2.2s;--duration:3.7s"></i>
+        </div>
+        <div class="intro__content">
+          <div class="intro__emblem" aria-hidden="true"><span>ن</span></div>
+          <p class="intro__eyebrow">اللحظة اللي استنيتها وصلت</p>
+          <h1>بالتوفيق والنجاح</h1>
+          <p class="intro__message">كل خطوة تعبت فيها النهارده بتشوف نتيجتها</p>
+          <div class="intro__brand">نتيجتك</div>
+          <p class="intro__credit">صُنع بكل فخر بواسطة <b>Abdelrahman Mohamed Saber</b></p>
+        </div>
+        <button class="intro__skip" id="skip-intro" type="button">تخطي الافتتاحية</button>
+        <div class="intro__curtain intro__curtain--top"></div>
+        <div class="intro__curtain intro__curtain--bottom"></div>
+      </section>
+
+      <div class="ambient ambient--one"></div><div class="ambient ambient--two"></div><div class="grid-overlay"></div>
+      <header class="site-header">
+        <a class="brand" href="#" aria-label="نتيجتك">
+          <span class="brand__mark">ن</span>
+          <span><b>نتيجتك</b><small>الثانوية العامة ٢٠٢٦</small></span>
+        </a>
+        <div class="header-pill"><i></i> الدور الأول · نظام حديث</div>
+      </header>
+
+      <section class="hero">
+        <div class="hero__copy">
+          <p class="section-label"><span></span> لحظة الحصاد</p>
+          <h1>تعبك كان كبير…<em>وفرحتك تستاهل تكون أكبر.</em></h1>
+          <p>ابحث عن نتيجتك برقم الجلوس أو الاسم، واعرف مجموعك في ثوانٍ.</p>
+          <div class="trust-row">
+            <span><i>✓</i> بحث سريع</span><span><i>✓</i> متوافق مع الموبايل</span><span><i>✓</i> بيانات ٢٠٢٦</span>
+          </div>
+        </div>
+
+        <div class="search-panel">
+          <div class="search-panel__top">
+            <div><span class="search-panel__icon">⌕</span><div><p>ابحث عن النتيجة</p><small>اختار طريقة البحث المناسبة ليك</small></div></div>
+            <span class="live-badge"><i></i> متاح الآن</span>
+          </div>
+          <div class="mode-switch" role="tablist">
+            <button type="button" class="active" data-mode="seat"><span>١٢٣</span> رقم الجلوس</button>
+            <button type="button" data-mode="name"><span>أ</span> الاسم</button>
+          </div>
+          <form id="search-form" novalidate>
+            <label for="result-query" id="query-label">رقم الجلوس</label>
+            <div class="search-input" id="search-input-wrap">
+              <span id="input-icon">#</span>
+              <input id="result-query" type="text" inputmode="numeric" autocomplete="off" dir="ltr" placeholder="مثال: 2001970" />
+            </div>
+            <p class="search-hint" id="search-hint">تأكد من كتابة رقم الجلوس كاملًا بالأرقام.</p>
+            <button class="search-button" id="search-button" type="submit"><span id="button-label">عرض النتيجة</span><span aria-hidden="true">←</span></button>
+          </form>
+          <div class="privacy-note"><span>◇</span> استخدم البيانات للبحث عن النتيجة فقط.</div>
+        </div>
+      </section>
+
+      <section class="results-section" id="results-section" aria-live="polite"></section>
+
+      <section class="steps">
+        <div class="steps__header"><p class="section-label"><span></span> الموضوع بسيط</p><h2>ثلاث خطوات… والفرحة قدامك</h2></div>
+        <div class="steps__grid">
+          <article><span>٠١</span><i>⌕</i><h3>اختار طريقة البحث</h3><p>استخدم رقم الجلوس أو اكتب اسم الطالب من بدايته.</p></article>
+          <article><span>٠٢</span><i>#</i><h3>اكتب البيانات بدقة</h3><p>راجع الرقم أو الاسم قبل الضغط على عرض النتيجة.</p></article>
+          <article><span>٠٣</span><i>✦</i><h3>احتفل باللحظة</h3><p>شوف مجموعك ونسبتك، وشارك فرحتك مع اللي بتحبهم.</p></article>
+        </div>
+      </section>
+
+      <footer>
+        <div class="brand brand--footer"><span class="brand__mark">ن</span><span><b>نتيجتك</b></span></div>
+        <p>صُنع بكل فخر بواسطة <strong>Abdelrahman Mohamed Saber</strong></p>
+        <small>نتمنى لكل طلاب الثانوية العامة التوفيق والنجاح.</small>
+      </footer>
+    </main>
+  </body>
+</html>
